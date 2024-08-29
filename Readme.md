@@ -23,23 +23,26 @@
   </li>
 
   <li>
+  Single Store
    <ul>
-     <li></li>
-     <li></li>
+     <li>Redux maintains a single global store that holds the entire state of your application.</li>
+     <li>Components can read data from this store and dispatch actions to update it.</li>
     </ul>
   </li>
 
   <li>
+  Actions and Reducers:
    <ul>
-     <li></li>
-     <li></li>
+     <li>Actions represent events or user interactions (e.g., clicking a button).</li>
+     <li>Reducers are pure functions that handle these actions and update the state accordingly.</li>
     </ul>
   </li>
   
   <li>
+  React-Redux Integration
    <ul>
-     <li></li>
-     <li></li>
+     <li>React-Redux is the official package that connects React components with the Redux store.</li>
+     <li>It allows components to read data from the store and dispatch actions to update it.</li>
     </ul>
   </li>
 
