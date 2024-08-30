@@ -27,7 +27,6 @@ function App() {
   function resetCount() {
     dispatch({ type: "0" });
   }
-
   return (
     <>
       <div>
@@ -50,5 +49,4 @@ function App() {
     </>
   );
 }
-
 export default App;

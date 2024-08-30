@@ -50,4 +50,7 @@
 
 <p>Note:- We use redux to overcome the problem of prop drilling.<br/> Before Moving Further lets agan recap the useReducer Hook. <br/>Let's create a Component called child which will be child component of app.jsx, this component will have 4 buttons +, -, *, /, to add 1, subtract -1, to double and to half the count respectively.</p>
 <img src="reduximg/redux1.png"/>
+<img src="reduximg/redux2.png"/>
+Lets see How Child Component Looks Like
+<img src="reduximg/redux3.png"/>
 </p>
