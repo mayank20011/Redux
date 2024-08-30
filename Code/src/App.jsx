@@ -1,10 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useReducer } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import Child from "./Child.jsx";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, dispatch] = useReducer(countReducer, 0);
+
+  function countReducer(count, action) {
+    switch (action.type) {
+      case "+":
+        return count + 1;
+      case "-":
+        return count - 1;
+      case "*":
+        return count * 2;
+      case "/":
+        return count / 2;
+      case "0":
+        return 0;
+      default:
+        return count;
+    }
+  }
+
+  function resetCount() {
+    dispatch({ type: "0" });
+  }
 
   return (
     <>
@@ -18,18 +40,15 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <button onClick={resetCount}>count is {count}</button>
       </div>
+      <Child dispatch={dispatch} />
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Click on "+" button to add 1, "-" to subtract 1, "*" to double the count
+        and "/" to half the count and on count to reset the count.
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
