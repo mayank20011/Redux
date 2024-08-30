@@ -55,6 +55,10 @@ Lets see How Child Component Looks Like
 <img src="reduximg/redux3.png"/>
 The Problem with this useReducer Hook is prop drilling suppose there is a child component called "a" of child.jsx and the "a" component is using this dispatch function instead of child.jsx component, so we have to send the dispatch from app to Child then Child to "a", imagine this hierachy goes very long then its a big chain of prop drilling, what if we have a global state and we can manage it from anywhere in our app without props? We can do this using Redux...<br/>
 Ques:- So when to use Redux?
-<br/>1>) Only For Big Application.
+<br/>1.) Only For Big Application.
 <br/>2.) Hight frequency of State Changes:- State is changing very frequently.
 </p>
+<p>The Store we are talking about has state, dispatch function and reducer function, and we already know what they are.</p>
+<h3>Redux Library</h3>
+<p>Lets First Start by redux Library, ie:- pure Redux, lets install redux using npm i redux.</p>
+<img src="reduximg/redux4.png"/>
