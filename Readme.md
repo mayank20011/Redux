@@ -1,4 +1,4 @@
-<h1>Tutorial for React Redux</h1>
+<h1>Tutorial for Redux</h1>
 <p>In this tutorial we will learn the following libraries:-</p>
 <ol>
 <li>Redux</li>
@@ -6,7 +6,7 @@
 <li>Redux-thunk</li>
 <li>Redux-Toolkit</li>
 <li>RTK Query</li>
-<li>Redux Saga</li>
+<li>Redux Saga (Optional) </li>
 </ol>
 
 <h3>Redux:-</h3>
@@ -48,5 +48,6 @@
 
 </ol>
 
+<p>Note:- We use redux to overcome the problem of prop drilling.</p>
 
 </p>
