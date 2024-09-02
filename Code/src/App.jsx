@@ -2,13 +2,14 @@ import { useReducer } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Child from "./Child.jsx";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
+import logger from "redux-logger";
 
 import "./App.css";
 
 function App() {
+  const store = createStore(storeReducer, applyMiddleware(logger));
 
-  const store = createStore(storeReducer);
   function storeReducer(state = { amount: 1 }, action) {
     switch (action.type) {
       case "ADD":
@@ -25,7 +26,17 @@ function App() {
         return state;
     }
   }
-  console.log(store.getState());
+  // // console.log(store.getState());
+  store.dispatch({ type: "ADD" });
+  // // console.log(store.getState());
+  store.dispatch({ type: "SUBTRACT" });
+  // // console.log(store.getState());
+  store.dispatch({ type: "DIVIDE" });
+  // // console.log(store.getState());
+  store.dispatch({ type: "DOUBLE" });
+  // // console.log(store.getState());
+  store.dispatch({ type: "RESET" });
+  // // console.log(store.getState());
 
   const [count, dispatch] = useReducer(countReducer, 0);
 

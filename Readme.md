@@ -62,3 +62,12 @@ Ques:- So when to use Redux?
 <h3>Redux Library</h3>
 <p>Lets First Start by redux Library, ie:- pure Redux, lets install redux using npm i redux.</p>
 <img src="reduximg/redux4.png"/>
+<img src="reduximg/redux5.png"/>
+<p>We can see Redux looks like as useReducer Hook.</p>
+<h3>Middleware in Redux.</h3>
+<p>When we call dispatch function, the action object direly ges to te reducer function, what if we want to stop dispatch in between or wants to take another action between sending action to dispatch? we uses middleware for that. eg:- lets try logger middleware. lets install it using npm i logger</p>
+<img src="reduximg/middleware1.png"/>
+Lets call dispatch function and see how does this go.
+<img src="reduximg/middleware2.png"/>
+<p>Here we can see, as soon as we called the dispatch function the middleware is called automatically before passing the action object to reducer and in output the middleware is return us some info ie:- the prev state of store is {acount:1}
+and the type of action is ADD and the next state of store is {amount:2}, everytime we will calle dispatch function, we will get output from logger middleware.<br/> There are a lot more middleware eg:- thunk, this middleware delays the dispatch function call to make apis call we will see it later in detail.</p>
