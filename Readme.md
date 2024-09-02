@@ -82,8 +82,8 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
 
 <h3>Thunk Middleware</h3>
 <p>Lets create a json server:- how to cerate?<br/> create a json file eg:- db.json in src/assets/jsonserver <br/>{
-  "accounts":[
-     {"id":1, "amount":200},
-     {"id":2, "amount":100}
-  ]
+  <br/>"accounts":[<br/>
+     {"id":1, "amount":200},<br/>
+     {"id":2, "amount":100}<br/>
+  ]<br/>
 }<br/>and install a global dependency called json-server, ed:- <br/> npm i -g json-server.</p>
