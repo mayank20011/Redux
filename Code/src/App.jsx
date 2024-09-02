@@ -26,17 +26,30 @@ function App() {
         return state;
     }
   }
-  // // console.log(store.getState());
-  store.dispatch({ type: "ADD" , payload:5});
-  // // console.log(store.getState());
-  store.dispatch({ type: "SUBTRACT" });
-  // // console.log(store.getState());
-  store.dispatch({ type: "DIVIDE" });
-  // // console.log(store.getState());
-  store.dispatch({ type: "DOUBLE" });
-  // // console.log(store.getState());
-  store.dispatch({ type: "RESET" });
-  // // console.log(store.getState());
+
+  // Action Creator
+
+  function ADD(payload = 1) {
+    return { type: "ADD", payload: payload };
+  }
+  function SUBTRACT() {
+    return { type: "SUBTRACT"};
+  }
+  function DIVIDE() {
+    return { type: "DIVIDE"};
+  }
+  function DOUBLE() {
+    return { type: "DOUBLE"};
+  }
+  function RESET() {
+    return { type: "RESET"};
+  }
+
+  store.dispatch(ADD(5));
+  store.dispatch(SUBTRACT());
+  store.dispatch(DIVIDE());
+  store.dispatch(DOUBLE());
+  store.dispatch(RESET());
 
   const [count, dispatch] = useReducer(countReducer, 0);
 

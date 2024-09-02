@@ -73,3 +73,8 @@ Lets call dispatch function and see how does this go.
 and the type of action is ADD and the next state of store is {amount:2}, everytime we will calle dispatch function, we will get output from logger middleware.<br/> There are a lot more middleware eg:- thunk, this middleware delays the dispatch function call to make apis call we will see it later in detail.</p>
 <p>Note:- Now what if we want to increament ny 5 every time and note by 1, we can do it using payload attribute in action object while callong dispatch function, eg:-</p>
 <img src="reduximg/logger1.png"/>
+
+<h3>Action Creators</h3>
+<p>Now we Know that these action objects can be called by anyone, so what is someone write add instead of 'ADD' in type key of action object. eg:- <br/> stor.dispatch({type:'add', payload:5})<br/> there is no such type so default value will be returned by reducer, but the one who called this dispatch function will think there is some error and its not working, so to overcome this problem what if we create a function and this function will return action object so that manually no one has to write action object, this concept is called nothing but action creator. lets create action creator.</p>
+<img src="reduximg/AC1.png"/>
+<img src="reduximg/AC2.png"/>
