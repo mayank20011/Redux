@@ -78,3 +78,12 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
 <p>Now we Know that these action objects can be called by anyone, so what is someone write add instead of 'ADD' in type key of action object. eg:- <br/> stor.dispatch({type:'add', payload:5})<br/> there is no such type so default value will be returned by reducer, but the one who called this dispatch function will think there is some error and its not working, so to overcome this problem what if we create a function and this function will return action object so that manually no one has to write action object, this concept is called nothing but action creator. lets create action creator.</p>
 <img src="reduximg/AC1.png"/>
 <img src="reduximg/AC2.png"/>
+<p>Till now we have done synchronous request, lets do some asynchronous requests, using thunk middleware, so lets see it in detail.</p>
+
+<h3>Thunk Middleware</h3>
+<p>Lets create a json server:- how to cerate?<br/> create a json file eg:- db.json in src/assets/jsonserver <br/>{
+  "accounts":[
+     {"id":1, "amount":200},
+     {"id":2, "amount":100}
+  ]
+}<br/>and install a global dependency called json-server, ed:- <br/> npm i -g json-server.</p>
