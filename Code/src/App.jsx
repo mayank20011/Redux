@@ -13,7 +13,7 @@ function App() {
   function storeReducer(state = { amount: 1 }, action) {
     switch (action.type) {
       case "ADD":
-        return { amount: state.amount + 1 };
+        return { amount: state.amount + action.payload };
       case "SUBTRACT":
         return { amount: state.amount - 1 };
       case "DIVIDE":
@@ -27,7 +27,7 @@ function App() {
     }
   }
   // // console.log(store.getState());
-  store.dispatch({ type: "ADD" });
+  store.dispatch({ type: "ADD" , payload:5});
   // // console.log(store.getState());
   store.dispatch({ type: "SUBTRACT" });
   // // console.log(store.getState());

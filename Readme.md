@@ -71,3 +71,5 @@ Lets call dispatch function and see how does this go.
 <img src="reduximg/middleware2.png"/>
 <p>Here we can see, as soon as we called the dispatch function the middleware is called automatically before passing the action object to reducer and in output the middleware is return us some info ie:- the prev state of store is {acount:1}
 and the type of action is ADD and the next state of store is {amount:2}, everytime we will calle dispatch function, we will get output from logger middleware.<br/> There are a lot more middleware eg:- thunk, this middleware delays the dispatch function call to make apis call we will see it later in detail.</p>
+<p>Note:- Now what if we want to increament ny 5 every time and note by 1, we can do it using payload attribute in action object while callong dispatch function, eg:-</p>
+<img src="reduximg/logger1.png"/>
