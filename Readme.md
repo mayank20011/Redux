@@ -86,4 +86,7 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
      {"id":1, "amount":200},<br/>
      {"id":2, "amount":100}<br/>
   ]<br/>
-}<br/>and install a global dependency called json-server, ed:- <br/> npm i -g json-server.</p>
+}<br/>and install a global dependency called json-server, ed:- <br/> npm i -g json-server. <br/> After installing this global dependency lets try to run json server using it</p>
+<img src="reduximg/jsonserver1.png"/>
+<p>we can also do request like http://localhost:3000/accounts/1 , json server dependency will automatically take out the id from url and search it and will return the obj with id:1</p>
+<img src="reduximg/jsonserver2.png"/>
