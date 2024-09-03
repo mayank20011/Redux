@@ -4,14 +4,23 @@ import viteLogo from "/vite.svg";
 import Child from "./Child.jsx";
 import { applyMiddleware, createStore } from "redux";
 import logger from "redux-logger";
-
+import axios from "axios";
+import { thunk } from "redux-thunk";
 import "./App.css";
 
 function App() {
-  const store = createStore(storeReducer, applyMiddleware(logger));
+  // function getinitializationvalue()
+  // {
+  //    axios.get("http://localhost:3000/accounts")
+  //    .then((response)=>{console.log(response.data[0].amount)})
+  //    .catch((err)=>{console.log(err)})
+  // }
+  const store = createStore(storeReducer, applyMiddleware(logger, thunk));
 
   function storeReducer(state = { amount: 1 }, action) {
     switch (action.type) {
+      case "INITIALIZATION":
+        return { amount: action.payload };
       case "ADD":
         return { amount: state.amount + action.payload };
       case "SUBTRACT":
@@ -28,29 +37,39 @@ function App() {
   }
 
   // Action Creator
-
+  function INITIALIZATION(dispatch, getState) {
+    axios
+      .get("http://localhost:3000/accounts")
+      .then((response) => {
+        console.log(response.data[0].amount)
+        dispatch({ type: "INITIALIZATION", payload: response.data[0].amount });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
   function ADD(payload = 1) {
     return { type: "ADD", payload: payload };
   }
   function SUBTRACT() {
-    return { type: "SUBTRACT"};
+    return { type: "SUBTRACT" };
   }
   function DIVIDE() {
-    return { type: "DIVIDE"};
+    return { type: "DIVIDE" };
   }
   function DOUBLE() {
-    return { type: "DOUBLE"};
+    return { type: "DOUBLE" };
   }
   function RESET() {
-    return { type: "RESET"};
+    return { type: "RESET" };
   }
 
+  store.dispatch(INITIALIZATION);
   store.dispatch(ADD(5));
   store.dispatch(SUBTRACT());
   store.dispatch(DIVIDE());
   store.dispatch(DOUBLE());
   store.dispatch(RESET());
-
   const [count, dispatch] = useReducer(countReducer, 0);
 
   function countReducer(count, action) {

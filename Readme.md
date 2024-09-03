@@ -90,3 +90,11 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
 <img src="reduximg/jsonserver1.png"/>
 <p>we can also do request like http://localhost:3000/accounts/1 , json server dependency will automatically take out the id from url and search it and will return the obj with id:1</p>
 <img src="reduximg/jsonserver2.png"/>
+<p>Now Lets try to, make api call in our app.jsx, for that lets install axios, and import it.</p>
+<p>task:- till now the amount is initialized to 1 at start we dont want it, we want our starting value of amount from an api, lets try to do this task.<br/>Lets create a new action caleed initialization and also make a action creator function for it.</p>
+<img src="reduximg/thunk1.png"/>
+<p>Lets call it and see if it works.</p>
+<img src="reduximg/thunk2.png"/>
+<p>Now lets try to initialize this state using api.</p>
+<img src="reduximg/thunk3.png"/>
+<p>What if we can stop our program to get data from api and then we can have dispatch function in our action creator function and then from there we can call it, we can do it with a middleware called redux-thunk, Let's try. <br/> Command is :- npm i redux-thunk</p>
