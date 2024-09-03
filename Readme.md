@@ -97,4 +97,25 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
 <img src="reduximg/thunk2.png"/>
 <p>Now lets try to initialize this state using api.</p>
 <img src="reduximg/thunk3.png"/>
-<p>What if we can stop our program to get data from api and then we can have dispatch function in our action creator function and then from there we can call it, we can do it with a middleware called redux-thunk, Let's try. <br/> Command is :- npm i redux-thunk</p>
+<p>What if we can stop our program to get data from api and then we can have dispatch function in our action creator function and then from there we can call it, we can do it with a middleware called redux-thunk, Let's try. <br/> Command is :- npm i redux-thunk<br/>Now How to use Thunk?<br/>import thunk and then add it to the applyMiddleware function which is inside the createStore function.</p>
+<img src="reduximg/thunk4.png"/>
+<p>The place where we used to call our action creator using dispatch function, instead now we will not call our action creator but pass the defination of action creator to dispatch and the thunk will automatically pass the dispatch function and getstate,so now we can use dispatch in our action creator function.</p>
+<img src="reduximg/thunk5.png"/>
+<p>We will explore thunk a lil more later.</p>
+<h3>Multiple reducers</h3>
+<p>Now suppose we also have bonus data and not just accounts datat in our application.</p>
+<img src="reduximg/mr1.png"/>
+<p>Now we have 2 options, one create another reducer for this bonus or create another field called bonus in this state. eg: state={amount:12, bonus:123} lets see bith the scenario ie:- updating the already built state, creating new reducer.</p>
+<ol type="i">
+  <li>
+   <h4>New variable in old state</h4>
+   <p>We dont want to mess in our already existing code, lets create a new file called test.js and try to do this there. <br/>src->assest->test->test.js<br/>
+   <img src="reduximg/mr2.png"/>
+   <p>So this is how we have to do it, what if? there is another object inside amount key, then we have to make another copy too which will make code more complex and messy, so it is better to make a new reducer for it, lets see.</p>
+   </p>
+  </li>
+  <li>
+  <h4>New Reducer</h4>
+  <p></p>
+  </li>
+</ol>

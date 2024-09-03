@@ -9,12 +9,7 @@ import { thunk } from "redux-thunk";
 import "./App.css";
 
 function App() {
-  // function getinitializationvalue()
-  // {
-  //    axios.get("http://localhost:3000/accounts")
-  //    .then((response)=>{console.log(response.data[0].amount)})
-  //    .catch((err)=>{console.log(err)})
-  // }
+
   const store = createStore(storeReducer, applyMiddleware(logger, thunk));
 
   function storeReducer(state = { amount: 1 }, action) {
@@ -41,7 +36,6 @@ function App() {
     axios
       .get("http://localhost:3000/accounts")
       .then((response) => {
-        console.log(response.data[0].amount)
         dispatch({ type: "INITIALIZATION", payload: response.data[0].amount });
       })
       .catch((err) => {
@@ -65,11 +59,11 @@ function App() {
   }
 
   store.dispatch(INITIALIZATION);
-  store.dispatch(ADD(5));
-  store.dispatch(SUBTRACT());
-  store.dispatch(DIVIDE());
-  store.dispatch(DOUBLE());
-  store.dispatch(RESET());
+  // store.dispatch(ADD(5));
+  // store.dispatch(SUBTRACT());
+  // store.dispatch(DIVIDE());
+  // store.dispatch(DOUBLE());
+  // store.dispatch(RESET());
   const [count, dispatch] = useReducer(countReducer, 0);
 
   function countReducer(count, action) {
