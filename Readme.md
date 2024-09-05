@@ -116,6 +116,13 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
   </li>
   <li>
   <h4>New Reducer</h4>
-  <p></p>
-  </li>
+  <p>Lets create a new reducer called bonusReducer and its action creator function.</p>
+  <img src="reduximg/mulred1.png"/>
+  <p>Now lets also make its reducer function</p>
+  <img src="reduximg/mulred2.png"/>
+  <p>Now the problem is that, how are we going to use this new reducer, because the old reducer that we were using we were calling it using store because while declaring the store we mentioned that store is linked with a reducer called storeReducer, so should we create a new state???<br/>No, We can combine multiple reducer, for a single store, HOW?</p>
+  <h3>combineReducers</h3>
+  <p>we can use combineReducers function, and pass it a object of reducers, while declaring the store, so we should change our store declaration.</p>
+  <img src="reduximg/mulred3.png"/>
+  </li>  
 </ol>

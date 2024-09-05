@@ -2,15 +2,21 @@ import { useReducer } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Child from "./Child.jsx";
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, createStore, combineReducers } from "redux";
 import logger from "redux-logger";
 import axios from "axios";
 import { thunk } from "redux-thunk";
 import "./App.css";
 
 function App() {
-
-  const store = createStore(storeReducer, applyMiddleware(logger, thunk));
+  
+  const store = createStore(
+    combineReducers({
+      account: storeReducer,
+      bonus: bonusReducer,
+    }),
+    applyMiddleware(logger, thunk)
+  );
 
   function storeReducer(state = { amount: 1 }, action) {
     switch (action.type) {
@@ -31,7 +37,22 @@ function App() {
     }
   }
 
-  // Action Creator
+  function bonusReducer(state = { points: 1 }, action) {
+    switch (action.type) {
+      case "INITIALIZATION":
+        return { points: action.payload };
+      case "ADD":
+        return { points: state.points + action.payload };
+      case "SUBTRACT":
+        return { points: state.points + action.payload };
+      case "DOUBLE":
+        return { points: state.points * 2 };
+      default:
+        return state;
+    }
+  }
+
+  // Action Creator for count
   function INITIALIZATION(dispatch, getState) {
     axios
       .get("http://localhost:3000/accounts")
@@ -58,6 +79,28 @@ function App() {
     return { type: "RESET" };
   }
 
+  //  Action creator for bonus
+  function bonusInitialization(dispatch, getState) {
+    axios
+      .get("http://localhost:3000/bonus")
+      .then((response) => {
+        dispatch({ type: "INITIALIZATION", payload: response.data[0] });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  function bonusADD(value = 1) {
+    return { type: "ADD", payload: value };
+  }
+  function bonusSubtract(value = 1) {
+    return { type: "SUBTRACT", payload: value };
+  }
+  function bonusDouble() {
+    return { type: "DOUBLE" };
+  }
+
+  bonusInitialization();
   store.dispatch(INITIALIZATION);
   // store.dispatch(ADD(5));
   // store.dispatch(SUBTRACT());
