@@ -130,5 +130,8 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
   <img src="reduximg/mulred5.png"/>
   <img src="reduximg/mulred6.png"/>
   <p>Now we can see both amount and points are initialized.</p>
+  <p>NOTE:- Now in REDUX these api calls should have their cases eg:- on api req fail, pending and on success it is lil complicated, we will use redux toolking, async thunk and etc fr that.</p>
   </li>  
 </ol>
+
+<h2>We have learnt enough redux, lets change the branch to REACT-REDUX, here we will learn about react-redux library.</h2>
