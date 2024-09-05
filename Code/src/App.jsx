@@ -9,7 +9,7 @@ import { thunk } from "redux-thunk";
 import "./App.css";
 
 function App() {
-  
+
   const store = createStore(
     combineReducers({
       account: storeReducer,
@@ -39,13 +39,13 @@ function App() {
 
   function bonusReducer(state = { points: 1 }, action) {
     switch (action.type) {
-      case "INITIALIZATION":
+      case "BONUSINITIALIZATION":
         return { points: action.payload };
-      case "ADD":
+      case "BONUSADD":
         return { points: state.points + action.payload };
-      case "SUBTRACT":
+      case "BONUSSUBTRACT":
         return { points: state.points + action.payload };
-      case "DOUBLE":
+      case "BONUSDOUBLE":
         return { points: state.points * 2 };
       default:
         return state;
@@ -84,24 +84,24 @@ function App() {
     axios
       .get("http://localhost:3000/bonus")
       .then((response) => {
-        dispatch({ type: "INITIALIZATION", payload: response.data[0] });
+        dispatch({ type: "BONUSINITIALIZATION", payload: response.data[1].points });
       })
       .catch((err) => {
         console.log(err);
       });
   }
   function bonusADD(value = 1) {
-    return { type: "ADD", payload: value };
+    return { type: "BONUSADD", payload: value };
   }
   function bonusSubtract(value = 1) {
-    return { type: "SUBTRACT", payload: value };
+    return { type: "BONUSSUBTRACT", payload: value };
   }
   function bonusDouble() {
-    return { type: "DOUBLE" };
+    return { type: "BONUSDOUBLE" };
   }
 
-  bonusInitialization();
   store.dispatch(INITIALIZATION);
+  store.dispatch(bonusInitialization);
   // store.dispatch(ADD(5));
   // store.dispatch(SUBTRACT());
   // store.dispatch(DIVIDE());

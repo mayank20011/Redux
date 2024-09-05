@@ -124,5 +124,11 @@ and the type of action is ADD and the next state of store is {amount:2}, everyti
   <h3>combineReducers</h3>
   <p>we can use combineReducers function, and pass it a object of reducers, while declaring the store, so we should change our store declaration.</p>
   <img src="reduximg/mulred3.png"/>
+  <p>Now we have 2 reducers, ie:- Now our store will be a object with 2 key value pair, ie:- account and bonus, lets see.</p>
+  <img src="reduximg/mulred4.png"/>
+  <p>So to overcome these problems lets modify our cases in reducer and see how it works.</p>
+  <img src="reduximg/mulred5.png"/>
+  <img src="reduximg/mulred6.png"/>
+  <p>Now we can see both amount and points are initialized.</p>
   </li>  
 </ol>
