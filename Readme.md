@@ -19,6 +19,26 @@ With React Redux, your components can read data from the Redux store and dispatc
   <img src="./reduximg/rwr5.png"/>
   Bonus Component
   <img src="./reduximg/rwr6.png"/>
+  <p>Now this is making the code complex, what if there was child component of bonus or account and we need to access these props in that child component of bonus? then we have to send these props to bonus then bonus to its child, ie:- big prop drilling , which makes code complex. lets try to do it using redux.</p>
 </li>
-<li></li>
+
+<li>
+<h3>Using redux</h3>
+<p>Lets Create a store for this app specifically and try to do these tasks using redux, but lets first cerate few folder, for action creators, for reducer, lwts cerate these folder in src and create files in these folders</p>
+<img src="reduximg/rr1.png"/>
+<p>Now lets create store, reducers, we already created action creators.</p>
+<img src="reduximg/rr2.png"/>
+<img src="reduximg/rr3.png"/>
+<p>Now, we can create stores in app.jsx but we should create in main.jsx where app is called and rendered</p>
+<img src="reduximg/rr4.png">
+<p>Now lets access this store in app and use it</p>
+<img src="reduximg/rr5.png">
+<p>Now lets catch these props in child component and also use it there.</p>
+<img src="reduximg/rr6.png">
+<p>Now lets see whats inside these function</p>
+<img src="reduximg/rr7.png">
+<p></p>
+<img src="reduximg/rr8.png">
+<p></p>
+</li>
 </ul>
