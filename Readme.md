@@ -37,8 +37,15 @@ With React Redux, your components can read data from the Redux store and dispatc
 <img src="reduximg/rr6.png">
 <p>Now lets see whats inside these function</p>
 <img src="reduximg/rr7.png">
-<p></p>
+<p>Now lets also see Bonus Component</p>
 <img src="reduximg/rr8.png">
-<p></p>
+<p>Now lets see how our App works</p>
+<img src="reduximg/rr9.png"/>
+<p>Why the ui is not chnaged? <br/>When you create a store using Redux and update the store using Redux actions, the UI doesn’t automatically change for a simple reason: Redux itself doesn’t handle the rendering of your UI components. It’s a state management library, not a UI framework.<br/> TO do it lets install a library called react-redux <br/> npm i react-redux.<br/>Now lets try to use it.<br/>Note:- This library makes our work very simple, no need to share store as a prop + provides hooks for state and dispatch function. so let's see how all these things work.</p>
+<img src="reduximg/rr10.png"/>
+<p>Now let's also modify app component and it's child components.</p>
+<img src="reduximg/rr11.png"/>
+<img src="reduximg/rr12.png"/>
+<img src="reduximg/rr13.png"/>
 </li>
 </ol>
