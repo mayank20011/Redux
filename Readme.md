@@ -2,7 +2,7 @@
 <p>React Redux is the official React UI bindings layer for Redux.<br/>
 It acts as the bridge between your React components and the Redux store.<br/>
 With React Redux, your components can read data from the Redux store and dispatch actions to update the state.<br/>Lets create a simple App which will have 2 child components amount and bonus, now these child components should have some functionality, we want some data to flow from chld to parent, Bonus, account to app component. lets try to do it</p>
-<ul type="1">
+<ol type="i">
 <li>
 
  <h3>By lifting state up</h3>
@@ -41,4 +41,4 @@ With React Redux, your components can read data from the Redux store and dispatc
 <img src="reduximg/rr8.png">
 <p></p>
 </li>
-</ul>
+</ol>
