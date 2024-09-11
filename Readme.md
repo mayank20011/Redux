@@ -47,5 +47,10 @@ With React Redux, your components can read data from the Redux store and dispatc
 <img src="reduximg/rr11.png"/>
 <img src="reduximg/rr12.png"/>
 <img src="reduximg/rr13.png"/>
+<p>Now lets also modify bonus Component too.</p>
+<img src="reduximg/rr14.png"/>
+<p>Now let's test our component and see how it works.</p>
+<img src="reduximg/rr15.png"/>
+<p>Now the App is working as totally expected.</p>
 </li>
 </ol>

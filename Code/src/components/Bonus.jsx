@@ -1,6 +1,6 @@
 import {incBonus} from "../actions/index";
 import { useDispatch, useSelector } from "react-redux";
-function Bonus({store}) {
+function Bonus() {
 
   const dispatch=useDispatch();
   const points=useSelector((state)=>state.bonus.points);
