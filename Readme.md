@@ -51,6 +51,6 @@ With React Redux, your components can read data from the Redux store and dispatc
 <img src="reduximg/rr14.png"/>
 <p>Now let's test our component and see how it works.</p>
 <img src="reduximg/rr15.png"/>
-<p>Now the App is working as totally expected.</p>
+<p>Now the App is working as totally expected.<br/> Note:- <br/> in react-redux we just have to put a provider and then we have to use useDispatch and useSelector hook to access state and call dispatch function, react redux itself merge react state and its own state thats how we can see ui changing without any additional hooks, so we can create a complex application using redux and react-redux together, but still we can do a lot better using redux-toolkit.</p>
 </li>
 </ol>
