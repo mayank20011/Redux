@@ -1,4 +1,4 @@
-import {incAmount, decAmount, incByAmount} from "../actions/index";
+import {incAmount, decAmount, incByAmount, getUser} from "../actions/index";
 import { useDispatch, useSelector } from "react-redux";
 
 function Account() { 
@@ -20,6 +20,11 @@ function Account() {
   function changeValue(e){
     v= +e.target.value;
   }
+  function getUserData()
+  {
+    dispatch(getUser(2));
+  }
+
   return (
     <div className="border">
       <h4 className="pink">Account Component</h4>
@@ -29,6 +34,7 @@ function Account() {
         <button className="btns" onClick={decrement}>Decrement -</button>
         <input type="text" placeholder="Enter Amount ..." className="btns" onChange={changeValue}/>
         <button className="btns" onClick={incByAmt}>Increment By Ammount</button>
+        <button className="btns" onClick={getUserData}>Initialize User Data</button>
       </div>
     </div>
   )
